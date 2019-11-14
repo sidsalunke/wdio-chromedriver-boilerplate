@@ -1,3 +1,4 @@
+const isCI = process.env.CI;
 const config = {
     runner: 'local',
     specs: [
@@ -27,6 +28,10 @@ const config = {
         timeout: 30000,
         bail: true
     }
+}
+
+if (isCI) {
+  config.hostname = 'chromedriver';
 }
 
 exports.config = config;

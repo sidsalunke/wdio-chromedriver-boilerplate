@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.conf.js",
+    "test:ci": "cross-env CI=true wdio wdio.conf.js",
+    "test:ci:docker": "docker-compose up --abort-on-container-exit --exit-code-from tests"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +18,7 @@
     "@wdio/sync": "5.16.5",
     "chai": "4.2.0",
     "chromedriver": "78.0.1",
+    "cross-env": "6.0.3",
     "wdio-chromedriver-service": "5.0.2",
     "webdriverio": "5.16.6"
   }
